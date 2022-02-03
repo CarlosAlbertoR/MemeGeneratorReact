@@ -1,8 +1,19 @@
-# Getting Started with Create React App
+# MemeGeneratorReact
+
+## Description
+Meme creator application in ReactJs.
+
+### Design
+### Phase 1 - Building
+![](./src/assets/img/Generate%20Fry.jpeg)
+
+### Phase 2 - Conection with the api
+![](./src/assets/img/Fry%20Meme.jpeg)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Development server
+## Available scripts
 
 In the project directory, you can run:
 
