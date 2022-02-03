@@ -1,6 +1,11 @@
 import html2canvas from 'html2canvas';
 import { useState } from 'react';
 import './App.css';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 
 function App() {
   const [line1, setLine1] = useState('');
@@ -32,20 +37,55 @@ function App() {
 
   return (
     <div className='App'>
-      <select onChange={changeImage}>
-        <option value='fire'>Burning House</option>
-        <option value='futurama'>Futurama</option>
-        <option value='history'>History Channel</option>
-        <option value='matrix'>Matrix</option>
-        <option value='philosoraptor'>Philosoraptor</option>
-        <option value='smart'>Smart Guy</option>
-      </select>
-      <br />
-      <input type='text' placeholder='Line 1' onChange={changeLine1} />
-      <br />
-      <input type='text' placeholder='Line 2' onChange={changeLine2} />
-      <br />
-      <button onClick={onClickExport}>Export</button>
+      <h2>Meme generator</h2>
+      <Select
+        onChange={changeImage}
+        label='Age'
+        variant='standard'
+        sx={{ m: 1, width: '25ch' }}
+        value={image}
+      >
+        <MenuItem value='fire'>Burning House</MenuItem>
+        <MenuItem value='futurama'>Futurama</MenuItem>
+        <MenuItem value='history'>History Channel</MenuItem>
+        <MenuItem value='matrix'>Matrix</MenuItem>
+        <MenuItem value='philosoraptor'>Philosoraptor</MenuItem>
+        <MenuItem value='smart'>Smart Guy</MenuItem>
+      </Select>
+
+      <Box
+        sx={{
+          '& > :not(style)': { m: 1, width: '25ch' },
+        }}
+        noValidate
+        autoComplete='off'
+      >
+        <TextField
+          type='text'
+          placeholder='Line 1'
+          onChange={changeLine1}
+          label='Line 1'
+          variant='standard'
+        />
+      </Box>
+      <Box
+        sx={{
+          '& > :not(style)': { m: 1, width: '25ch' },
+        }}
+        noValidate
+        autoComplete='off'
+      >
+        <TextField
+          type='text'
+          placeholder='Line 2'
+          onChange={changeLine2}
+          label='Line 2'
+          variant='standard'
+        />
+      </Box>
+      <Button variant='contained' onClick={onClickExport}>
+        Export
+      </Button>
 
       <div className='meme' id='meme'>
         <span>{line1}</span> <br />
