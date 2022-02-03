@@ -88,8 +88,8 @@ function App() {
       </Button>
 
       <div className='meme' id='meme'>
-        <span>{line1}</span> <br />
-        <span>{line2}</span> <br />
+        <span>{line1.toUpperCase()}</span> <br />
+        <span>{line2.toUpperCase()}</span> <br />
         <img src={'/img/' + image + '.jpg'} alt='' />
       </div>
     </div>
